@@ -204,7 +204,14 @@ async def main():
     LOGGER.info("✅ Sucessfully Hosted Your Bot !!")
     LOGGER.info("✅ Now Do Visit: @about_arthik !!")
     await idle()
+def start_flask():
+    flask_app = Flask(__name__)
 
+    @flask_app.route('/')
+    def home():
+        return "Hello, this is BABYMUSIC server!"
+
+    flask_app.run(host='0.0.0.0', port=8000)
 
 # Callback & Message Queries
 
